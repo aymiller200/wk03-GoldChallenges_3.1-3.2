@@ -45,7 +45,7 @@ guess = window.prompt("I'm thinking of a number between 1 and 10! Bet you can't 
                 break;
             } else if (guess < answer) {
                 tries--
-                guess = prompt(`To low. ${tries} remaining`)
+                guess = prompt(`Too low. ${tries} remaining`)
                 
             } else if (guess > answer){
                 tries--
@@ -57,6 +57,10 @@ guess = window.prompt("I'm thinking of a number between 1 and 10! Bet you can't 
             if (tries == 0){
                 alert('Sorry, no more guesses')
                 break;
+            }
+
+            if(guess < 1 || guess > 10){
+                alert('Please guess a number between 1 and 10')
             }
 
 
