@@ -29,42 +29,41 @@ let answer = Math.floor(Math.random() * (max-min + 1)) + min
 console.log(answer)
 
 
-guess = window.prompt("I'm thinking of a number between 1 and 10! Bet you can't guess it!")
+guess = window.prompt("I'm thinking of a number between 1 and 10... Go on, guess what it is!")
 
 
     
-    
+       
         parseInt(guess)
+        
 
         for(i = 1; i <= answer; i++){
          
+            if(guess < 1 || guess > 10){
+                
+                alert(`What a goof! I said to guess a number between 1 and 10 and you guessed ${guess}`)
+            }
             
             if (guess == answer){
-                 alert('You got it!')
-    
+                 alert('You got it! I knew you would!')
                 break;
+
             } else if (guess < answer) {
+               
                 tries--
-                guess = prompt(`Too low. ${tries} remaining`)
+                guess = prompt(`${guess} is too low, friend. ${tries} remaining`)
                 
             } else if (guess > answer){
+                
                 tries--
-                guess = prompt(`Too high. ${tries} remaining`)
+                guess = prompt(`${guess} is too high, pal. ${tries} remaining`)
                 
             } 
             
-            
             if (tries == 0){
-                alert('Sorry, no more guesses')
+                guess = alert('Sorry, no more guesses, buddy. Great try though!')
                 break;
-            }
-
-            if(guess < 1 || guess > 10){
-                alert('Please guess a number between 1 and 10')
-            }
-
-
-            
+            }   
         }
     
 
